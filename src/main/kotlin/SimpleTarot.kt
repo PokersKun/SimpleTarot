@@ -38,7 +38,7 @@ object SimpleTarot : KotlinPlugin(
         logger.info { "Plugin loaded" }
 
         GlobalEventChannel.subscribeGroupMessages {
-            finding(Regex("^(?:(.+)张|)塔罗牌")) {
+            finding(Regex("^(?:(.+)张|)猛男塔罗")) {
                 val sql: SqlExpressionBuilder.() -> Op<Boolean> = { userDB.id eq sender.id }
                 val tarotNum = when (val value = it.groups[1]?.value) {
                     "一", "壹", "单", null -> 1

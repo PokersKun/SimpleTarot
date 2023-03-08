@@ -24,7 +24,7 @@ class GetTarot(
             return TarotConfig.format.replace("%目标%", "[mirai:at:${user.id}]")
                 .replace("%牌名%", tarot.name).replace(
                     "%描述%",
-                    if (random == 0) "正位\n${tarot.positive}" else "逆位\n${tarot.negative}"
+                    if (random == 0) "【正位】\n${tarot.positive}" else "【逆位】\n${tarot.negative}"
                 ).deserializeMiraiCode()
         }
     val tarotImage: ExternalResource?
